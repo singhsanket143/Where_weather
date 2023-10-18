@@ -6,6 +6,7 @@ import ReduxState from "../../Interfaces/ReduxState";
 
 function Lowerhalf() {
     const currentData = useSelector((state: ReduxState) => state.forecast.data.currentData);
+    const location = useSelector((state: ReduxState) => state.forecast.data.location);
     return (
         <div className="h-[50%] w-full p-4 flex flex-col justify-between"> 
             <div className="flex flex-col">
@@ -33,7 +34,7 @@ function Lowerhalf() {
                 {/* location */}
                 <div><MdLocationPin /></div>
                 
-                <div>Bengaluru, KA, India</div>
+                <div>{location.region}, {location.name}, {location.country}</div>
             </div>
         </div>
     )
